@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Raleway&family=Rubik&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  @keyframes pulsate {
+    0% {
+      background-color: #673AB7;
+    }
+    50% {
+      background-color: #2196F3;
+    }
+    100% {
+      background-color: #673AB7;
+    }
+  }
+
+  
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: pulsate 5s infinite;
+  }
+  
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  #game-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #fff;
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-in-out forwards;
+  }
+  
+  .square {
+    width: 33.33%;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    border: 1px solid #e6e5e5;
+    
+  }
+
+.info,
+.play-again-btn {
+  opacity: 0;
+  animation: slideIn 1s ease-in-out forwards;
+  animation-delay: 0.9s;
+}
+  
+  .square:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  
+  
+  .circle {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 15px solid #673AB7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+  
+  .cross {
+    height: 80px;
+    width: 80px;
+    position: relative;
+  }
+  
+  .cross:before,
+  .cross:after {
+    content: "";
+    position: absolute;
+    background-color: #2196F3;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cross:before {
+    top: 10px;
+    left: 40%;
+    width: 20%;
+    height: 80%;
+    transform: skew(45deg);
+  }
+  
+  .cross:after {
+    top: 10px;
+    left: 40%;
+    width: 20%;
+    height: 80%;
+    transform: skew(-45deg);
+  }
+  
+  .info {
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .play-again-btn {
+    padding: 10px 20px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 18px;
+    background-color: #fff;
+    color: #673AB7;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+  
+  .play-again-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  
+  /* Media Queries */
+  /* galaxy fold device */
+ /* Galaxy Fold */
+@media (max-width: 280px) {
+  #game-board {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .square {
+    height: 83px;
+  }
+  
+  .circle {
+    height: 66px;
+    width: 66px;
+    border: 12px solid #673AB7;
+    font-size: 33px;
+  }
+  
+  .cross:before,
+  .cross:after {
+    top: 7px;
+    width: 14%;
+    height: 70%;
+  }
+  
+  .info {
+    font-size: 18px;
+  }
+  
+  .play-again-btn {
+    font-size: 14px;
+  }
+}
+
+/* ipad mini */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #game-board {
+    width: 500px;
+    height: 500px;
+  }
+  
+  .square {
+    height: 166px;
+  }
+  
+  .circle {
+    height: 133px;
+    width: 133px;
+    border: 24px solid #673AB7;
+    font-size: 66px;
+  }
+  
+  .cross:before,
+  .cross:after {
+    top: auto;
+    width: 28%;
+    height: 120%;
+  }
+  
+  .info {
+    font-size: 36px;
+  }
+  
+  .play-again-btn {
+    font-size: 24px;
+  }
+}
+
+
+
+/* surface pro 7 */
+@media (min-width: 1368px) and (max-width: 912px) {
+  #game-board {
+    width: 900px;
+    height: 900px;
+  }
+  
+  .square {
+    height: 300px;
+  }
+  
+  .circle {
+    height: 240px;
+    width: 240px;
+    border: 42px solid #673AB7;
+    font-size: 120px;
+  }
+  
+  .cross:before,
+  .cross:after {
+    top: auto;
+    width: 50%;
+    height: 200%;
+  }
+  
+  .info {
+    font-size: 60px;
+  }
+  
+  .play-again-btn {
+    font-size: 36px;
+  }
+}
